@@ -82,8 +82,3 @@ Visit: [http://localhost:5173](http://localhost:5173)
 
 ---
 
-## 📄 License
-
-This project was built for demonstration purposes using AI assistance. You may reuse or modify freely.
-
----
