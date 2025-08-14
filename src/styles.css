@@ -1,0 +1,65 @@
+*{ box-sizing: border-box; }
+body{ margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:#e9edf3; color:#1c2330; }
+.header{ background:#c44e4e; color:#fff; padding:12px 16px; display:flex; align-items:center; justify-content:space-between; }
+.header h1{ font-size:18px; margin:0; letter-spacing:.3px; }
+.header .actions{ display:flex; gap:8px; }
+.btn{ padding:10px 14px; border:0; background:#3c6f9c; color:#fff; border-radius:6px; cursor:pointer; font-weight:600; }
+.btn.secondary{ background:#3f8d63; }
+.btn:disabled{ opacity:.6; cursor:not-allowed; }
+.layout{ display:grid; grid-template-columns: 26% 48% 26%; gap:10px; padding:10px; }
+.card{ background:#fff; border:1px solid #d6dbe6; border-radius:8px; overflow:hidden; }
+.card h3{ margin:0; padding:8px 10px; font-size:14px; background:#f4f6fb; border-bottom:1px solid #e6eaf3; }
+.table{ width:100%; border-collapse: collapse; font-size:13px; }
+.table th, .table td{ padding:6px 8px; border-bottom:1px solid #eef1f6; }
+.table th{ text-align:left; background:#fafbfe; }
+.swatch{ width:16px; height:16px; border-radius:4px; border:1px solid #d0d5e2; display:inline-block; }
+.centerTrack{ position:relative; padding:10px; }
+.trackWrap{ position:relative; background:#6a8a43; border:6px solid #a33b3b; height:420px; border-radius:8px; overflow:hidden; }
+.lane{ position:relative; height: 40px; border-bottom:1px dashed rgba(255,255,255,.7); display:flex; align-items:center; padding-left:40px; }
+.lane:last-child{ border-bottom:0; }
+.laneNum{ position:absolute; left:0; top:0; bottom:0; width:28px; background:rgba(0,0,0,.15); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; }
+.finish{ position:absolute; right:16px; top:12px; bottom:12px; width:6px; background:#ffffff; }
+.horseIcon{ position:absolute; left:40px; width:28px; height:28px; top:6px; transition: left linear; }
+.small{ font-size:12px; color:#667; }
+.twoCols{ display:grid; grid-template-columns: 1fr 1fr; gap:10px; padding:10px; }
+.scroll{ max-height:380px; overflow:auto; }
+.table thead th.sticky{ position: sticky; top: 0; z-index: 1; }
+.footerBar{ padding:8px 12px; font-size:12px; text-align:right; background:#f7f9fd; border-top:1px solid #e6eaf3; color:#7a859b; }
+@media (max-width: 1100px){
+  .layout{ grid-template-columns: 1fr; }
+  .trackWrap{ height:440px; }
+}
+
+
+
+ to { background-position: -224px 0; } 
+  to   { background-position: -168px 0; }
+
+
+.trackFooter{ margin-top:8px; padding:6px 10px; background:#f7f9fd; border:1px solid #e6eaf3; border-radius:6px; font-size:12px; color:#475569; }
+
+
+/* === Horse Sprite (clean) === */
+
+
+
+  to   { background-position: -224px 0; }
+
+
+.horseSprite{
+  position:absolute;
+  top:6px;
+  width:28px;
+  height:28px;
+  background-image:url('/src/assets/horse-sprite.svg');
+  background-repeat:no-repeat;
+  background-size:224px 28px; /* 8 * 28 */
+  animation:gallop 0.6s steps(8) infinite;
+  left:0%;
+  transition:left linear;
+}
+
+@keyframes gallop {
+  from { background-position: 0 0; }
+  to   { background-position: -224px 0; }
+}
